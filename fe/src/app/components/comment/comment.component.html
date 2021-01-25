@@ -1,0 +1,20 @@
+<div class="comment">
+  <div class="comment-header">
+    {{ getAuthor() }} ({{ date | date:'medium'}})
+  </div>
+  <div class="comment-body">
+    {{ getBody() }}
+  </div>
+  <div class="comment-form mb-4">
+    <div class="d-flex flex-row-reverse mt-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="createComment()">Ответить</button>
+    </div>
+    <div>
+      <comment-form *ngIf="showForm" [parentId]="getCommentId()"></comment-form>
+    </div>
+  </div>
+  
+  <div class="childs ml-5" *ngFor="let child of getChilds()">
+    <comment [data]="child"></comment>
+  </div>
+</div>

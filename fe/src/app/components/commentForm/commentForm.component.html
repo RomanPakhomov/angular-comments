@@ -1,0 +1,15 @@
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" class="comment-form" #commentForm="ngForm">
+    <div class="form-group">
+      <label for="author-name">Name</label>
+      <input required [(ngModel)]="comment.authorName" #author="ngModel" name="author"  type="text" class="form-control form-control-sm" id="author-name">
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger"> Name is required</div>
+    </div>
+    <div class="form-group">
+      <label for="body">Comment</label>
+      <textarea required [(ngModel)]="comment.body" #body="ngModel" name="body" class="form-control form-control-sm" id="body" rows="2"></textarea>
+      <div [hidden]="body.valid || body.pristine" class="alert alert-danger"> Comment is required</div>
+    </div>
+    <button type="submit" [disabled]="!commentForm.form.valid" class="btn btn-outline-primary btn-sm" >Отправить</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="jumbotron px-4 py-1">
+    <h1 class="display-4">SAMPLE POST</h1>
+  </div>
+  <div *ngFor="let comment of comments | async" class="comments mt-3 p-4">
+    <comment [data]="comment"></comment>
+  </div>
+</div>
