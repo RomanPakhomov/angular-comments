@@ -16,10 +16,6 @@ export class AppService{
     return this.refresh;
   }
 
-  getStoredComments() {
-
-  }
-
   getComments(): Observable<CommentModel[]> {
     return this.http.get<CommentModel[]>(this.commentsUrl)
       .pipe(

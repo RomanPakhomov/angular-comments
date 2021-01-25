@@ -23,17 +23,7 @@ export class CommentForm{
   }
 
   onSubmit() { 
-    this.submitted = true; 
-    this.comment.parentId = this.parentId;
-    this.comment.dateTime = new Date().toString();
     this.service.saveComment(this.comment);
-  }
-
-  createComment(){
-    console.log(this.comment.authorName);
-    console.log(this.comment.body);
-    console.log(this.comment.parentId);
-    this.submitted = true;
   }
 
 }
