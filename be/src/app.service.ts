@@ -51,7 +51,7 @@ export class AppService {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toString();
   }
 
-  async getComments(): Promise<CommentModel[]> {
+  getComments(): CommentModel[] {
     return this.comments;
   }
 

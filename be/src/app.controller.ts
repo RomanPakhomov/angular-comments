@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getComments(): Promise<CommentModel[]> {
+  getComments(): CommentModel[] {
     return this.appService.getComments();
   }
 
