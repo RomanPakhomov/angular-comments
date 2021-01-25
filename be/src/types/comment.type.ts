@@ -4,4 +4,5 @@ export default interface CommentModel {
   dateTime: string;
   authorName: string;
   body: string;
+  childs?: CommentModel[];
 }
